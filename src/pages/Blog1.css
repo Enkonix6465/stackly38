@@ -1,0 +1,92 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --dropdown-bg: #f0f0f0;
+  --hover-bg: #ddd;
+  --header-border: #ccc;
+  --highlight-color: #ff4a57;
+  --button-bg: #fff; /* fallback button bg if needed */
+}
+
+[data-theme="dark"],
+body.dark-theme {
+  --bg-color: #3d3a3a;
+  --text-color: #f0f0f0;
+  --dropdown-bg: #333;
+  --hover-bg: #343434;
+  --header-border: #444;
+  --highlight-color: #ff4a57;
+  --button-bg: #2a2a2a;
+}
+
+/* Cybersecurity Ways Section */
+.cybersecurity-ways {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cybersecurity-ways .way {
+  background-color: var(--dropdown-bg);
+  color: var(--text-color);
+  border-left: 4px solid var(--highlight-color);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.cybersecurity-ways .way:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: var(--button-bg);
+}
+
+.cybersecurity-ways .way h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.cybersecurity-ways .way:hover h3 {
+  color: var(--highlight-color);
+}
+
+.cybersecurity-ways .way p {
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.cybersecurity-ways .way:hover p {
+  color: var(--highlight-color);
+}
+
+/* Dark Theme Specific (for extra compatibility) */
+body.dark-theme .cybersecurity-ways .way {
+  background-color: var(--dropdown-bg);
+  color: var(--text-color);
+  border-left-color: var(--highlight-color);
+}
+
+body.dark-theme .cybersecurity-ways .way:hover {
+  background-color: var(--button-bg);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .cybersecurity-ways .way h3 {
+  color: var(--text-color);
+}
+
+body.dark-theme .cybersecurity-ways .way:hover h3 {
+  color: var(--highlight-color);
+}
+
+body.dark-theme .cybersecurity-ways .way p {
+  color: #ccc;
+}
+
+body.dark-theme .cybersecurity-ways .way:hover p {
+  color: #ffb3bd; /* optional lighter hover color in dark mode */
+}

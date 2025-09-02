@@ -1,0 +1,116 @@
+/* === Theme Modes === */
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* === Cloud-Native Section === */
+.cloud-native-section {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(to bottom, #f7f9fc, #e6ecf3);
+}
+
+.dark-mode .cloud-native-section {
+  background: linear-gradient(to bottom, #1e1e1e, #2a2a2a);
+}
+
+.cloud-native-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .cloud-native-card {
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.05);
+}
+
+/* === Title === */
+.cloud-native-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ff4a57;
+}
+
+.dark-mode .cloud-native-title {
+  color: #ff4a57;
+}
+
+/* === Each Point === */
+.cloud-native-point {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 4px solid #ff4a57;
+  background-color: #fdfdfd;
+  border-radius: 6px;
+}
+
+.dark-mode .cloud-native-point {
+  background-color: #2a2a2a;
+  border-left-color: #ff4a57;
+}
+
+.cloud-native-point h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.cloud-native-point p {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.6;
+}
+
+.cloud-native-point strong {
+  font-weight: 600;
+  display: block;
+  margin-top: 0.5rem;
+  color: #ff4a57;
+}
+
+.dark-mode .cloud-native-point strong {
+  color: #ff4a57;
+}
+
+/* === CTA Link === */
+.cloud-native-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff4a57;
+  text-decoration: none;
+  border: 2px solid #ff4a57;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.cloud-native-link:hover {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+.dark-mode .cloud-native-link {
+  color: #ff4a57;
+  border-color: #ff4a57;
+}
+
+.dark-mode .cloud-native-link:hover {
+  background-color: #ff4a57;
+  color: #000;
+}

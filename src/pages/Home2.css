@@ -1,0 +1,939 @@
+/* Wrapper theme */
+.edu-wrapper {
+  font-family: 'Arial', sans-serif;
+}
+
+.dark-theme {
+  background-color: #111;
+  color: #fff;
+}
+
+.light-theme {
+  background-color: #fff;
+  color: #111;
+}
+
+/* Hero section */
+.edu-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.edu-hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.edu-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.edu-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.edu-hero-content p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+/* Filter section */
+.edu-filter-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.edu-search-bar {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.edu-search-bar input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid #ff4a57;
+  outline: none;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.edu-search-bar input:focus {
+  box-shadow: 0 0 8px #ff4a57;
+}
+
+.edu-category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.edu-category-btn {
+  padding: 10px 20px;
+  border: 2px solid #ff4a57;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #ff4a57;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.edu-category-btn.active,
+.edu-category-btn:hover {
+  background-color: #ff4a57;
+  color: white;
+}
+
+/* Course grid - fixed 3x3 */
+.edu-course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.edu-course-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.edu-course-card:hover {
+  transform: translateY(-5px);
+}
+
+.edu-course-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.edu-course-category {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Search detailed results */
+.edu-detailed-list {
+  display: grid;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.edu-course-detailed-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.edu-course-detailed-card:hover {
+  transform: translateY(-5px);
+}
+
+.edu-course-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.edu-course-description {
+  color: #333;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+/* No results */
+.edu-no-results {
+  font-style: italic;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* Dark mode overrides */
+.dark-theme .edu-course-card,
+.dark-theme .edu-course-detailed-card {
+  background-color: #1f1f1f;
+  color: #eee;
+}
+
+.dark-theme .edu-course-description {
+  color: #bbb;
+}
+
+.dark-theme .edu-course-category {
+  color: #aaa;
+}
+
+.dark-theme .edu-search-bar input {
+  background-color: #222;
+  color: white;
+  border-color: #ff4a57;
+}
+@media (max-width: 768px) {
+  /* Hero Section */
+  .edu-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .edu-hero-content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* Filter Section */
+  .edu-filter-section {
+    padding: 40px 15px;
+  }
+
+  .edu-search-bar {
+    margin-bottom: 1.5rem;
+  }
+
+  .edu-category-buttons {
+    gap: 8px;
+  }
+
+  .edu-category-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Course Grid */
+  .edu-course-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .edu-course-card {
+    padding: 15px;
+  }
+
+  /* Detailed List */
+  .edu-detailed-list {
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  .edu-course-detailed-card {
+    padding: 15px;
+  }
+
+  .edu-course-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .edu-course-description {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Wrapper and Heading */
+.benefits-wrapper {
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.benefits-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: inherit;
+}
+
+/* Container */
+.benefits-container {
+  display: flex;
+  flex-wrap: nowrap;           /* No wrapping, all in one row */
+  justify-content: space-between;
+  gap: 15px;
+  overflow: hidden;            /* Hide scrollbars */
+  padding: 0 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 180px;               /* Fixed height matching cards */
+}
+
+/* Benefit card */
+.benefit-card {
+  flex: 1 1 0;                /* Grow and shrink equally */
+  min-width: 150px;           /* Minimum width */
+  max-width: 220px;           /* Maximum width */
+  height: 180px;              /* Fixed height */
+  box-sizing: border-box;
+  perspective: 1100px;
+  cursor: pointer;
+  outline: none;
+  --animation-delay: var(--delay, 0s);
+  animation: slideUpFadeIn 0.6s forwards;
+  animation-delay: var(--animation-delay);
+  opacity: 0;
+}
+
+.benefit-card:focus {
+  outline: 2px solid #ff4a57;
+  outline-offset: 3px;
+}
+
+/* Flip inner container */
+.benefit-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-style: preserve-3d;
+  background-color: white;
+}
+
+.benefit-card:hover .benefit-inner,
+.benefit-card:focus-within .benefit-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back faces */
+.benefit-front,
+.benefit-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #222;
+  user-select: none;
+}
+
+.benefit-front {
+  background-color: #fff;
+}
+
+.benefit-front img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 15px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.1));
+}
+
+.benefit-back {
+  background-color: #ff4a57;
+  color: white;
+  transform: rotateY(180deg);
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  user-select: text;
+}
+
+/* Animations for entering */
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark theme */
+.dark-theme {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-theme .benefits-wrapper {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-theme .benefit-inner {
+  background-color: #222;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.dark-theme .benefit-front {
+  color: #eee;
+  background-color: #222;
+}
+
+.dark-theme .benefit-front img {
+  filter: brightness(0) invert(1);
+}
+
+.dark-theme .benefit-back {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .benefits-container {
+    gap: 12px;
+    padding: 0 5px;
+  }
+
+  .benefit-card {
+    min-width: 130px;
+    max-width: 180px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-wrapper {
+    padding: 30px 15px;
+  }
+
+  .benefits-heading {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .benefits-container {
+    gap: 8px;
+    padding: 0 2px;
+  }
+
+  .benefit-card {
+    min-width: 100px;
+    max-width: 140px;
+    height: 140px;
+  }
+}
+@media (max-width: 768px) {
+  .benefits-wrapper {
+    padding: 20px 10px;
+  }
+
+  .benefits-heading {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .benefits-container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .benefits-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .benefit-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-heading {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .benefit-card {
+    min-width: 120px;
+    max-width: 140px;
+    height: 130px;
+  }
+
+  .benefit-front img {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+  }
+
+  .benefit-front,
+  .benefit-back {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .benefits-container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* For Firefox */
+  }
+
+  .benefits-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome/Safari */
+  }
+
+  .benefit-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    max-width: 100%;
+    height: auto; /* or your preferred height */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* === Base Styling === */
+.interactive-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* === Light Theme === */
+.light-theme .interactive-section {
+  background-color: #fff;
+  color: #000;
+}
+
+.light-theme .interactive-text h2,
+.light-theme .interactive-text p {
+  color: #000;
+}
+
+.light-theme .interactive-btn {
+  background-color: #ff4a57;
+  color: #fff;
+  border: 2px solid #ff4a57;
+}
+
+.light-theme .interactive-btn:hover {
+  background-color: #fff;
+  color: #ff4a57;
+}
+
+/* === Dark Theme === */
+.dark-theme .interactive-section {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-theme .interactive-text h2,
+.dark-theme .interactive-text p {
+  color: #eee;
+}
+
+.dark-theme .interactive-btn {
+  background-color: #ff4a57;
+  color: #fff;
+  border: 2px solid #ff4a57;
+}
+
+.dark-theme .interactive-btn:hover {
+  background-color: transparent;
+  color: #ff4a57;
+}
+
+/* === Video Styling === */
+.interactive-video-wrapper {
+  flex: 1 1 500px;
+  max-width: 600px;
+  transition: transform 0.4s ease;
+}
+
+.interactive-video-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.interactive-video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* === Text Content === */
+.interactive-text {
+  flex: 1 1 400px;
+  max-width: 500px;
+  transition: transform 0.4s ease;
+}
+
+.interactive-text:hover {
+  transform: translateY(-5px);
+}
+
+.interactive-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.interactive-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* === Button === */
+.interactive-btn {
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.interactive-btn:hover {
+  transform: scale(1.05);
+}
+
+/* === Entrance Animation === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .interactive-section {
+    flex-direction: column;
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .interactive-video-wrapper,
+  .interactive-text {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .interactive-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .interactive-text p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .interactive-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .interactive-video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* === STACKLY Advantage Section === */
+.skills-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 60px;
+  background: #fff;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Bars container */
+.skills-bars {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
+}
+
+.skills-bars h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  white-space: nowrap;
+  color: inherit;
+  border-bottom: 3px solid currentColor;
+  padding-bottom: 5px;
+  font-weight: bold;
+  max-width: 220px;
+}
+
+.bar-group {
+  margin-bottom: 20px;
+}
+
+.bar-group span {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #ff4a57;
+}
+
+.bar-bg {
+  background: #eee;
+  background: var(--bar-bg, #eee);
+  height: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.bar-fill {
+  height: 100%;
+  line-height: 18px;
+  padding-right: 10px;
+  text-align: right;
+  font-weight: 600;
+  color: white;
+  border-radius: 12px 0 0 12px;
+  white-space: nowrap;
+  width: 0;
+  background-color: #000000;
+  color:white; /* Orange */
+  transition: width 1.5s ease-out;
+}
+
+
+/* Circles container */
+.skills-visuals {
+  position: relative;
+  width: 400px;
+  height: 320px;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Circle styling */
+.skill-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #000;   /* Black */
+  color: #fff;              /* White */
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  line-height: 1.2;
+  position: absolute;
+  margin-top: 80px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: orange like bar, white text */
+.skill-circle:hover {
+  background-color: #ff4a57; /* Orange */
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 74, 87, 0.4);
+}
+
+/* Dark theme circle styling */
+.skills-section.dark .skill-circle {
+  background-color: #000;
+  color: #fff;
+}
+
+
+/* Circle positions */
+.skill1 { top: -30%; left: 35%; }
+.skill2 { top: -8%; left: 70%; }
+.skill3 { top: 38%; left: 86%; }
+.skill4 { top: 80%; left: 70%; }
+.skill5 { top: 100%; left: 35%; }
+.skill6 { top: 95%; left: 23%; }
+.skill7 { top: 80%; left: 0%; }
+.skill8 { top: 38%; left: -15%; }
+.skill9 { top: -8%; left: -3%; }
+
+/* Center circle */
+.center-circle {
+  position: absolute;
+  top: 200px;
+  left: 140px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ff4a57;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(58, 0, 58, 0.7);
+  pointer-events: none;
+}
+
+/* === Dark Theme Overrides === */
+.dark-theme .skills-section {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark-theme .skills-section .skills-bars h2 {
+  color: #f0f0f0;
+  border-color: #ff4a57;
+}
+
+.dark-theme .skills-section .bar-bg {
+  background: #333;
+}
+
+.dark-theme .skills-section .bar-fill {
+  background-color: #ff4a57;
+  color: white;
+}
+
+.dark-theme .skills-section .bar-group span {
+  color: #ff4a57;
+}
+
+.dark-theme .skills-section .skill-circle {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.dark-theme .skills-section .skill-circle:hover {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+.dark-theme .skills-section .center-circle {
+  background-color: #ff4a57;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 74, 87, 0.6);
+}
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .skills-visuals {
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .skill-circle {
+    position: static;
+    width: 90px;
+    height: 90px;
+    font-size: 13px;
+    padding: 8px;
+    margin: 5px;
+  }
+
+  .center-circle {
+    position: static;
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
+    padding: 8px;
+    margin: 10px auto;
+    box-shadow: 0 0 6px rgba(255, 74, 87, 0.5);
+  }
+
+  .skills-bars {
+    padding: 0 10px;
+  }
+}

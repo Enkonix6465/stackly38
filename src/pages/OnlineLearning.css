@@ -1,0 +1,487 @@
+/* section 2 cloud */
+.cloud-section {
+  padding: 80px 10%;
+  background: linear-gradient(to right, #f9fbff, #eef3ff);
+}
+
+.cloud-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cloud-content {
+  flex: 1;
+}
+
+.cloud-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ff4a57;
+}
+
+.cloud-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #444;
+  line-height: 1.6;
+}
+
+.cloud-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.cloud-features li {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+
+.cloud-btn {
+  padding: 12px 25px;
+  background: #ff4a57;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cloud-btn:hover {
+  background: #fdfdfd;
+  color: #ff4a57;
+  transform: translateY(-2px);
+}
+
+.cloud-image {
+  flex: 1;
+  text-align: center;
+}
+
+.cloud-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .cloud-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cloud-content {
+    order: 2;
+  }
+
+  .cloud-image {
+    order: 1;
+  }
+}
+
+/* Section 3 cloud */
+.cloud-services-timeline {
+  padding: 5px 10%;
+  background: #f9fbff;
+}
+
+.cloud-timeline-container {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline {
+  flex: 1;
+  position: relative;
+}
+
+.timeline h2 {
+  font-size: 2rem;
+  color: #ff4a57;
+  margin-bottom: 10px;
+}
+
+.cloud-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding-left: 60px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeSlide 0.6s forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+.timeline-item:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes fadeSlide {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  background: #ff4a57;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-item:hover .timeline-icon {
+  transform: scale(1.2);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+}
+
+.timeline-content h3 {
+  margin: 0 0 10px;
+  color: #222;
+  align-self: center;
+  font-size: 1.3rem;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #555;
+  align-self: center;
+  font-size: 1rem;
+}
+
+.timeline-image {
+  flex: 1;
+  text-align: center;
+}
+
+.timeline-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  max-height: min-content;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s;
+}
+
+.timeline-image img:hover {
+  transform: scale(1.05);
+}
+
+h2,
+.cloud-subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .cloud-timeline-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .timeline-icon {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    text-align: center;
+  }
+
+  .timeline-image {
+    order: -1;
+  }
+}
+
+/* section 4 cloud benefits */
+.cloud-benefits {
+  padding: 5px 10%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.cloud-benefits-container h2 {
+  font-size: 2rem;
+  color: #ff4a57;
+  margin-bottom: 10px;
+}
+
+.benefits-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.benefits-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
+  background: #faeeee;
+  padding: 30px 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ff4a57;
+}
+
+.benefit-card h3 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.benefit-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-card {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+#cloud-services {
+  padding: 5px 20px;
+  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body, html {
+  overflow-x: hidden; /* Prevent horizontal scroll globally */
+}
+
+/* Optionally, also ensure .cloud-container and .cards do not overflow */
+.cloud-container,
+.cards {
+  overflow-x: hidden;
+}
+
+#cloud-services h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #ff4a57;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-image {
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #ff4a57;
+}
+
+.card-content p {
+  font-size: 15px;
+  color: #555;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.contact-section {
+  position: relative;
+  padding: 10px;
+  height: 500px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  max-width: 500px;
+  margin: 100px 40px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.contact-content h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #1e1e1e;
+}
+
+.contact-content p {
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff4a57;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #ffffff;
+  color: #ff4a57;
+}
+
+/* ========== DARK THEME STYLES ========== */
+
+
+
+
+.dark-theme .cloud-section,
+.dark-theme .cloud-services-timeline,
+.dark-theme .cloud-benefits,
+.dark-theme #cloud-services {
+  background: #181818;
+}
+
+.dark-theme .cloud-content h2,
+.dark-theme .timeline h2,
+.dark-theme .cloud-benefits-container h2,
+.dark-theme #cloud-services h1,
+.dark-theme .card h2 {
+  color: #ff4a57;
+}
+
+.dark-theme .cloud-content p,
+.dark-theme .cloud-features li,
+.dark-theme .timeline-content h3,
+.dark-theme .timeline-content p,
+.dark-theme .cloud-subtitle,
+.dark-theme .benefits-subtitle,
+.dark-theme .benefit-card h3,
+.dark-theme .benefit-card p,
+.dark-theme .card-content p,
+.dark-theme .contact-content h2,
+.dark-theme .contact-content p {
+  color: #e0e0e0;
+}
+
+.dark-theme .cloud-features li,
+.dark-theme .benefit-card,
+.dark-theme .card,
+.dark-theme .contact-content {
+  background: #232526;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.dark-theme .timeline-icon,
+.dark-theme .benefit-icon {
+  background: #ff4a57;
+  color: #fff;
+}
+
+.dark-theme .card-content {
+  background: #232526;
+}
+
+.dark-theme .background-img {
+  opacity: 0.3;
+}
