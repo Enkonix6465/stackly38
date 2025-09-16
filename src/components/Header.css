@@ -159,6 +159,29 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 1101;
+  }
+
   .nav {
     position: absolute;
     top: 70px;
@@ -169,6 +192,7 @@
     align-items: flex-start;
     padding: 1rem 2rem;
     display: none;
+    z-index: 1000;
   }
 
   .nav.open {
@@ -177,5 +201,10 @@
 
   .hamburger {
     display: flex;
+  }
+
+  /* Hide avatar in mobile view */
+  .avatarContainer {
+    display: none !important;
   }
 }

@@ -30,6 +30,14 @@
   overflow: hidden;
 }
 
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.25) 100%);
+  z-index: 0;
+}
+
 .hero-video {
   position: absolute;
   width: 100%;
@@ -45,14 +53,17 @@
   z-index: 1;
   text-align: center;
   padding: 20px;
-  color: white;
+  color: #fff;
   top: 50%;
   transform: translateY(-50%);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55), 0 0px 2px #222;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: bold;
+  color: #fff;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7), 0 1px 2px #222;
 }
 
 .highlight {
@@ -62,17 +73,21 @@
 .hero-content p {
   font-size: 1.2rem;
   margin: 15px 0;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-button {
   padding: 12px 28px;
   font-size: 1rem;
   background-color: #ff4a57;
-  color: white;
+  color: #fff;
+  font-weight: 700;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 .hero-button:hover {
@@ -105,8 +120,8 @@
 }
 
 .feature-card {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: #23272f; /* Softer dark */
+  color: #f5f7fa;
   width: 250px;
   text-align: center;
   padding: 40px 20px 30px;
@@ -121,8 +136,8 @@
 }
 
 .feature-icon {
-  background-color: #000;
-  color: #ff4a57;
+  background-color: #ff4a57;
+  color: #fff;
   font-size: 2.2rem;
   width: 60px;
   height: 60px;
@@ -143,7 +158,37 @@
 
 .feature-card p {
   font-size: 0.95rem;
-  color: #ccc;
+  color: #bfc8d6;
+}
+
+/* Fix homepage feature card layout issues on mobile */
+/* filepath: c:\Users\Lenovo\Downloads\stackly38-main\stackly38-main\src\pages\Home.css */
+
+@media (max-width: 600px) {
+  .feature-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .feature-card {
+    width: 90vw;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 28px 12px 22px;
+  }
+  .feature-icon {
+    margin-top: -40px;
+    margin-bottom: 12px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.7rem;
+  }
+  .feature-card h3 {
+    font-size: 1rem;
+  }
+  .feature-card p {
+    font-size: 0.92rem;
+  }
 }
 
 
@@ -153,7 +198,7 @@
 /* Already Existing Welcome Section Styles - Keep as is */
 .welcome-section {
   padding: 20px 20px;
-  background-color: transparent;
+  background-color: #f7f9fc;
 }
 
 .welcome-container {
@@ -190,7 +235,7 @@
 .welcome-text p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #666;
+  color: #444;
   text-align: justify;
   margin-bottom: 15px;
   transition: color 0.3s ease;
@@ -227,7 +272,7 @@
 
 /* === Section Wrapper === */
 .course-section {
-  background-color: #f1f1f1;
+  background-color: #f7f9fc;
   padding: 80px 20px;
   text-align: left;
   color: #222;
@@ -250,9 +295,9 @@
 
 /* === Button === */
 .course-btn {
-  background-color: transparent;
-  color: #ff4a57;
-  border: 2px solid #ff4a57;
+  background-color: #ff4a57;
+  color: #fff;
+  border: none;
   padding: 12px 24px;
   border-radius: 10px;
   font-weight: 600;
@@ -265,7 +310,7 @@
 }
 
 .course-btn:hover {
-  background-color: #ff4a57;
+  background-color: #e63b49;
   color: #fff;
 }
 
@@ -389,7 +434,8 @@
 
 .support-card {
   flex: 1 1 30%;
-  background-color: var(--card-bg);
+  background-color: #f5f7fa;
+  color: #222;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -415,6 +461,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
+  color: #ff4a57;
 }
 
 .support-list {
@@ -467,8 +514,8 @@
 
 /*section 6*/
 .vu-banner {
-  background-color: var(--banner-bg);
-  color: var(--banner-text);
+  background-color: #ff4a57;
+  color: #fff;
   padding: 2rem 3rem;
   display: flex;
   justify-content: space-between;
@@ -484,6 +531,7 @@
   font-weight: 700;
   margin: 0;
   flex: 1;
+  color: #fff;
 }
 
 .vu-banner-button {
@@ -491,8 +539,8 @@
 }
 
 .vu-download-button {
-  background-color: #ff4a57;
-  color: #fff;
+  background-color: #fff;
+  color: #ff4a57;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
@@ -503,8 +551,8 @@
 }
 
 .vu-download-button:hover {
-  background-color: white;
-  color: #ff4a57;
+  background-color: #ff4a57;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -533,4 +581,175 @@
 .vu-banner {
   --banner-bg: #f1f4f5;
   --banner-text: #000000;
+}
+
+/* Unify font sizes for headings, paragraphs, and cards across the homepage */
+/* filepath: c:\Users\Lenovo\Downloads\stackly38-main\stackly38-main\src\pages\Home.css */
+
+/* Base font size for body */
+body, .home-wrapper {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, .hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+h2, .welcome-text h2, .course-section h2, .support-title, .vu-banner-text h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h3, .feature-card h3, .support-card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+/* Paragraphs and card text */
+p, .hero-content p, .welcome-text p, .feature-card p, .course-section p, .support-list-item, .vu-banner {
+  font-size: 1rem;
+}
+
+/* Buttons */
+.hero-button, .course-btn, .vu-download-button {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  h1, .hero-content h1 {
+    font-size: 1.7rem;
+  }
+  h2, .welcome-text h2, .course-section h2, .support-title, .vu-banner-text h2 {
+    font-size: 1.15rem;
+  }
+  h3, .feature-card h3, .support-card-title {
+    font-size: 1rem;
+  }
+  p, .hero-content p, .welcome-text p, .feature-card p, .course-section p, .support-list-item, .vu-banner {
+    font-size: 0.95rem;
+  }
+  .hero-button, .course-btn, .vu-download-button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Improved dark/light theme colors for Home page */
+/* filepath: c:\Users\Lenovo\Downloads\stackly38-main\stackly38-main\src\pages\Home.css */
+
+/* Light Theme */
+.light-theme,
+body:not(.dark-theme) {
+  background-color: #f7f9fc;
+  color: #222;
+}
+
+.light-theme .feature-card {
+  background-color: #f5f7fa;
+  color: #222;
+}
+
+.light-theme .feature-card p {
+  color: #444;
+}
+
+.light-theme .feature-icon {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+.light-theme .welcome-section,
+.light-theme .course-section {
+  background-color: #f7f9fc;
+  color: #222;
+}
+
+.light-theme .support-card {
+  background-color: #f5f7fa;
+  color: #222;
+}
+
+.light-theme .support-card-title {
+  color: #ff4a57;
+}
+
+.light-theme .vu-banner {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+.light-theme .vu-banner-text h2 {
+  color: #fff;
+}
+
+.light-theme .vu-download-button {
+  background-color: #fff;
+  color: #ff4a57;
+}
+
+.light-theme .vu-download-button:hover {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+/* Dark Theme */
+.dark-theme,
+body.dark-theme {
+  background-color: #181c27;
+  color: #f5f7fa;
+}
+
+.dark-theme .feature-card {
+  background-color: #23272f;
+  color: #f5f7fa;
+}
+
+.dark-theme .feature-card p {
+  color: #bfc8d6;
+}
+
+.dark-theme .feature-icon {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+.dark-theme .welcome-section,
+.dark-theme .course-section {
+  background-color: #181c27;
+  color: #f5f7fa;
+}
+
+.dark-theme .support-card {
+  background-color: #23272f;
+  color: #f5f7fa;
+}
+
+.dark-theme .support-card-title {
+  color: #ff4a57;
+}
+
+.dark-theme .vu-banner {
+  background-color: #23272f;
+  color: #fff;
+}
+
+.dark-theme .vu-banner-text h2 {
+  color: #ff4a57;
+}
+
+.dark-theme .vu-download-button {
+  background-color: #ff4a57;
+  color: #fff;
+}
+
+.dark-theme .vu-download-button:hover {
+  background-color: #fff;
+  color: #ff4a57;
 }

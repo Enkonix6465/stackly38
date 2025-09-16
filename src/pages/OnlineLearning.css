@@ -332,6 +332,9 @@ body, html {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #fff;
   width: 300px;
   border-radius: 8px;
@@ -356,18 +359,20 @@ body, html {
 
 .card-content {
   padding: 20px;
+  text-align: center;
 }
 
 .card h2 {
   font-size: 20px;
   margin-bottom: 15px;
   color: #ff4a57;
+  text-align: center;
 }
 
 .card-content p {
   font-size: 15px;
   color: #555;
-  text-align: justify;
+  text-align: center;
   line-height: 1.5;
 }
 

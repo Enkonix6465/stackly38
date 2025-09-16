@@ -1,6 +1,7 @@
 .giving-section {
   background: linear-gradient(120deg, #fff5fa 0%, #ffe0ec 100%);
   padding: 60px 20px;
+  padding-bottom: 5px; /* Reduced bottom padding */
   text-align: center;
   font-family: Arial, sans-serif;
   color: #210027;
@@ -21,7 +22,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 220px;
+  justify-content: flex-start;
+  max-width: 240px;
+  min-height: 260px;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(33,0,39,0.08);
@@ -55,6 +58,23 @@
   transform: rotate(-45deg); /* re-align icon */
 }
 
+.giving-item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #210027;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.giving-item-desc {
+  font-size: 1rem;
+  color: #210027;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
 .giving-item p {
   font-size: 1.1rem;
   font-weight: bold;
@@ -85,6 +105,71 @@ body.dark-theme .giving-item-icon {
 body.dark-theme .giving-item p {
   color: #f3f3f3;
   text-align: justify;
+}
+
+/* Separate hero and giving sections visually */
+/* filepath: c:\Users\Lenovo\Downloads\stackly38-main\stackly38-main\src\pages\ContactUs.css */
+
+.hero {
+  position: relative;
+  min-height: 100vh;      /* Full viewport height */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.35); /* dark overlay for contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-overlay h1,
+.hero-overlay p {
+  margin: 0 0 12px 0;
+  color: #fff;
+  text-shadow: 0 2px 8px #222;
+}
+
+.giving-section {
+  position: relative;
+  z-index: 3;
+  background: #fff;
+  margin-top: 0;
+  padding: 40px 0 24px 0;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+/* Add spacing between hero and giving sections */
+.hero + .giving-section {
+  margin-top: -40px; /* overlap fix if needed */
+  padding-top: 48px;
+}
+
+/* Optional: add a divider */
+.hero::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(to bottom, rgba(30,30,30,0.15), #fff 80%);
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
 }
 
 
@@ -296,7 +381,7 @@ body.dark-theme .contact-right label {
   font-size: 1.2rem;
   margin-bottom: 25px;
   line-height: 1.6;
-  text-align: justify;         /* Justify banner content */
+  text-align: center;         /* Justify banner content */
 }
 
 .contact-btn {

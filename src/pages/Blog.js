@@ -50,19 +50,19 @@ const translations = {
         img: future,
         alt: "Future of Education",
         title: "The Future of Higher Education",
-        desc: "Universities are evolving to meet the needs of digital-native students. From hybrid degrees to micro-credentials, explore how higher education is adapting to a fast-changing world.",
+        desc: "Universities are evolving to meet the needs of digital-native students. From hybrid degrees to micro-credentials, higher education is adapting to a fast-changing world. Institutions are embracing flexible learning models that combine online convenience with on-campus experiences. They are also leveraging AI, virtual labs, and immersive technologies to personalize learning journeys. Micro-credentials and short-term certifications are gaining popularity as students and professionals seek targeted, career-relevant skills. Global collaborations and industry partnerships are ensuring that academic programs remain future-ready, equipping graduates with both technical expertise and soft skills.",
       },
       {
         img: ed,
         alt: "EdTech",
-        title: "EdTech Tools Transforming Classrooms",
-        desc: "From virtual labs to AI tutors, educational technology is reshaping how we teach and learn. Learn about tools that improve engagement and outcomes in classrooms around the world.",
+        title: "EdTech Shaping Learning",
+        desc: "From virtual labs to AI tutors, educational technology is reshaping how we teach and learn. Learn about tools that improve engagement and outcomes in classrooms around the world. Interactive platforms are making lessons more collaborative, while gamified learning keeps students motivated. Data-driven insights help educators track progress and customize support for every learner. Virtual and augmented reality are bringing complex concepts to life in ways that textbooks never could. As technology continues to advance, classrooms are evolving into dynamic, personalized spaces that prepare students for the future of work.",
       },
       {
         img: all,
         alt: "Inclusive Education",
         title: "Inclusive Education for All",
-        desc: "Inclusive classrooms celebrate diversity and empower all students to succeed. Learn strategies for supporting learners with different needs, backgrounds, and learning styles.",
+        desc: "Inclusive classrooms celebrate diversity and empower all students to succeed. Learn strategies for supporting learners with different needs, backgrounds, and learning styles. Culturally responsive teaching helps create a sense of belonging for every student. Assistive technologies and flexible lesson designs ensure accessibility for learners with disabilities. Collaborative activities encourage peer support and mutual respect across differences. By fostering empathy, adaptability, and equity, inclusive education equips students with the skills to thrive in a global society.",
       },
     ],
     leadershipList: [
@@ -315,7 +315,6 @@ const Blog = () => {
             <article
               className="leadership-item"
               key={idx}
-              onClick={() => handleGetStarted(item.path)}
             >
               <div className="leadership-text">
                 <h3>{item.title}</h3>

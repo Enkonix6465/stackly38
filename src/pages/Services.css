@@ -3,6 +3,9 @@
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.5s ease, color 0.5s ease;
   min-height: 100vh;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .light-mode {
@@ -13,6 +16,24 @@
 .dark-mode {
   background-color: transparent;
   color: #fff;
+}
+
+/* Prevent horizontal overflow and double scroll */
+body, html, .service-page {
+  overflow-x: hidden !important;
+}
+
+/* Remove unwanted vertical scroll from main container */
+/* .service-page {
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-y: auto;
+} */
+
+/* If any parent container uses overflow, reset it */
+.services-container-service,
+.services-section-service {
+  overflow: visible !important;
 }
 
 /*------------------
@@ -228,6 +249,8 @@
   z-index: 1;
   transition: color 0.3s ease;
   color: #fff;
+  background-color: #ff4a57 !important;
+  opacity: 1 !important;
 }
 
 .service-btn-service:before {
@@ -669,17 +692,23 @@
 .package-description {
   font-size: 1rem;
   margin-bottom: 20px;
-  height: 40px;
+  min-height: 48px;
+  max-width: 95%;
+  word-break: break-word;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.5;
+  overflow-wrap: break-word;
 }
 
 .package-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  border-top: 1px solid #eee;
   padding-top: 20px;
-  margin-top: 20px;
+  margin-top: 0;
+  border-top: 1px solid #eee;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-break: break-word;
 }
 
 .dark-mode .package-features {
@@ -709,7 +738,16 @@
   margin-top: 20px;
 }
 
-.package-btn:hover {
-  background-color: #ffffff;
-  color: #ff4a57;
+/* Responsive: prevent text overflow on mobile */
+@media (max-width: 600px) {
+  .package-description {
+    font-size: 0.95rem;
+    min-height: 36px;
+    padding: 0 4px;
+  }
+  .package-features {
+    font-size: 0.95rem;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
