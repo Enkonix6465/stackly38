@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
+import loginBg from "../images/login.jpg";
+import logoImg from "../images/logo.png"; // <-- Import your logo image
 
 // Add translations for Welcome page
 const translations = {
@@ -182,159 +184,185 @@ const Welcome = () => {
   }, [language]);
 
   return (
-    <>
-      <style>{`
-        @keyframes gradientFlow {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        body {
-          margin: 0;
-        }
-      `}</style>
+    <div style={styles.container}>
+      <div style={styles.card}>
+        {/* Logo image at the top, clickable to toggle login/signup */}
+        <div style={styles.logoWrapper}>
+          <img
+            src={logoImg}
+            alt="Stackly Logo"
+            style={styles.logoImg}
+            onClick={() => {
+              setError("");
+              setIsLogin((prev) => !prev);
+            }}
+          />
+        </div>
+        <h1 style={styles.heading}>
+          {t.welcome} <span style={styles.brand}>{t.brand}</span>
+        </h1>
 
-      <div
-        style={{
-          ...styles.container,
-          background:
-            "linear-gradient(-45deg, #ff4a57, #d83645, #ff6b6b, #ff8c96)",
-          backgroundSize: "400% 400%",
-          animation: "gradientFlow 15s ease infinite",
-        }}
-      >
-        <div style={styles.card}>
-          <h1 style={styles.heading}>
-            {t.welcome} <span style={styles.brand}>{t.brand}</span>
-          </h1>
-
-          {!isForgotPassword ? (
-            isLogin ? (
-              <form onSubmit={handleLoginSubmit} style={styles.form}>
-                <input
-                  style={styles.input}
-                  type="email"
-                  name="email"
-                  placeholder={t.email}
-                  value={loginData.email}
-                  onChange={handleLoginChange}
-                  required
-                />
-                <input
-                  style={styles.input}
-                  type="password"
-                  name="password"
-                  placeholder={t.password}
-                  value={loginData.password}
-                  onChange={handleLoginChange}
-                  required
-                />
-                <p
-                  style={styles.link}
-                  onClick={() => {
-                    setError("");
-                    setIsForgotPassword(true);
+        {!isForgotPassword ? (
+          isLogin ? (
+            <form onSubmit={handleLoginSubmit} style={styles.form}>
+              <label style={styles.label}>
+                {t.email} <span style={styles.required}>*</span>
+              </label>
+              <input
+                style={styles.input}
+                type="email"
+                name="email"
+                placeholder={t.email}
+                value={loginData.email}
+                onChange={handleLoginChange}
+                required
+              />
+              <label style={styles.label}>
+                {t.password} <span style={styles.required}>*</span>
+              </label>
+              <input
+                style={styles.input}
+                type="password"
+                name="password"
+                placeholder={t.password}
+                value={loginData.password}
+                onChange={handleLoginChange}
+                required
+              />
+              <p
+                style={styles.link}
+                onClick={() => {
+                  setError("");
+                  setIsForgotPassword(true);
+                }}
+              >
+                {t.forgot}
+              </p>
+              <button style={styles.button} type="submit">
+                {t.login}
+              </button>
+              <div style={styles.toggle}>
+                Don’t have an account?{" "}
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    textDecoration: "underline",
+                    cursor: "pointer",
                   }}
-                >
-                  {t.forgot}
-                </p>
-                <button style={styles.button} type="submit">
-                  {t.login}
-                </button>
-                <p
-                  style={styles.toggle}
                   onClick={() => {
                     setError("");
                     setIsLogin(false);
                   }}
                 >
-                  {t.dontHave} <strong>{t.signUp}</strong>
-                </p>
-              </form>
-            ) : (
-              <form onSubmit={handleSignUpSubmit} style={styles.form}>
-                <input
-                  style={styles.input}
-                  type="text"
-                  name="firstName"
-                  placeholder={t.firstName}
-                  value={signUpData.firstName}
-                  onChange={handleSignUpChange}
-                  required
-                />
-                <input
-                  style={styles.input}
-                  type="text"
-                  name="lastName"
-                  placeholder={t.lastName}
-                  value={signUpData.lastName}
-                  onChange={handleSignUpChange}
-                  required
-                />
-                <input
-                  style={styles.input}
-                  type="email"
-                  name="email"
-                  placeholder={t.email}
-                  value={signUpData.email}
-                  onChange={handleSignUpChange}
-                  required
-                />
-                <input
-                  style={styles.input}
-                  type="password"
-                  name="password"
-                  placeholder={t.password}
-                  value={signUpData.password}
-                  onChange={handleSignUpChange}
-                  required
-                />
-                <button style={styles.button} type="submit">
                   {t.signUp}
-                </button>
-                <p
-                  style={styles.toggle}
+                </span>
+              </div>
+            </form>
+          ) : (
+            <form onSubmit={handleSignUpSubmit} style={styles.form}>
+              <label style={styles.label}>
+                {t.firstName} <span style={styles.required}>*</span>
+              </label>
+              <input
+                style={styles.input}
+                type="text"
+                name="firstName"
+                placeholder={t.firstName}
+                value={signUpData.firstName}
+                onChange={handleSignUpChange}
+                required
+              />
+              <label style={styles.label}>
+                {t.lastName} <span style={styles.required}>*</span>
+              </label>
+              <input
+                style={styles.input}
+                type="text"
+                name="lastName"
+                placeholder={t.lastName}
+                value={signUpData.lastName}
+                onChange={handleSignUpChange}
+                required
+              />
+              <label style={styles.label}>
+                {t.email} <span style={styles.required}>*</span>
+              </label>
+              <input
+                style={styles.input}
+                type="email"
+                name="email"
+                placeholder={t.email}
+                value={signUpData.email}
+                onChange={handleSignUpChange}
+                required
+              />
+              <label style={styles.label}>
+                {t.password} <span style={styles.required}>*</span>
+              </label>
+              <input
+                style={styles.input}
+                type="password"
+                name="password"
+                placeholder={t.password}
+                value={signUpData.password}
+                onChange={handleSignUpChange}
+                required
+              />
+              <button style={styles.button} type="submit">
+                {t.signUp}
+              </button>
+              <div style={styles.toggle}>
+                Already have an account?{" "}
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                  }}
                   onClick={() => {
                     setError("");
                     setIsLogin(true);
                   }}
                 >
-                  {t.already} <strong>{t.login}</strong>
-                </p>
-              </form>
-            )
-          ) : (
-            <form onSubmit={handleForgotPasswordSubmit} style={styles.form}>
-              <h2 style={styles.subheading}>{t.reset}</h2>
-              <input
-                style={styles.input}
-                type="email"
-                placeholder={t.enterEmail}
-                value={forgotEmail}
-                onChange={handleForgotPasswordChange}
-                required
-              />
-              <button style={styles.button} type="submit">
-                {t.sendReset}
-              </button>
-              <p
-                style={styles.toggle}
-                onClick={() => {
-                  setError("");
-                  setResetMessage("");
-                  setIsForgotPassword(false);
-                }}
-              >
-                {t.back}
-              </p>
+                  {t.login}
+                </span>
+              </div>
             </form>
-          )}
+          )
+        ) : (
+          <form onSubmit={handleForgotPasswordSubmit} style={styles.form}>
+            <h2 style={styles.subheading}>{t.reset}</h2>
+            <label style={styles.label}>
+              {t.email} <span style={styles.required}>*</span>
+            </label>
+            <input
+              style={styles.input}
+              type="email"
+              placeholder={t.enterEmail}
+              value={forgotEmail}
+              onChange={handleForgotPasswordChange}
+              required
+            />
+            <button style={styles.button} type="submit">
+              {t.sendReset}
+            </button>
+            <p
+              style={styles.toggle}
+              onClick={() => {
+                setError("");
+                setResetMessage("");
+                setIsForgotPassword(false);
+              }}
+            >
+              {t.back}
+            </p>
+          </form>
+        )}
 
-          {error && <p style={styles.error}>{error}</p>}
-          {resetMessage && <p style={styles.success}>{resetMessage}</p>}
-        </div>
+        {error && <p style={styles.error}>{error}</p>}
+        {resetMessage && <p style={styles.success}>{resetMessage}</p>}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -345,6 +373,10 @@ const styles = {
     alignItems: "center",
     minHeight: "100vh",
     padding: "20px",
+    backgroundImage: `url(${loginBg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   },
   card: {
     background: "rgba(0, 0, 0, 0.6)",
@@ -355,6 +387,15 @@ const styles = {
     width: "100%",
     boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8)",
     color: "white",
+  },
+  logoWrapper: {
+    textAlign: "center",
+    marginBottom: "10px",
+  },
+  logoImg: {
+    height: "60px",
+    cursor: "pointer",
+    userSelect: "none",
   },
   heading: {
     fontSize: "28px",
@@ -418,6 +459,16 @@ const styles = {
     color: "#ffb3b8",
     marginTop: "10px",
     textAlign: "center",
+  },
+  label: {
+    fontSize: "14px",
+    color: "#ffb3b8",
+    marginBottom: "5px",
+    textAlign: "left",
+  },
+  required: {
+    color: "#ff6b6b",
+    marginLeft: "5px",
   },
 };
 

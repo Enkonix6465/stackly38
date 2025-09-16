@@ -177,7 +177,7 @@ function AdminDashboard() {
       <div className="admin-dashboard-container">
         <header className="dashboard-header">
           <h1>{t.dashboard}</h1>
-          <button
+          {/* <button
             className="btn-logout"
             onClick={() => {
               localStorage.removeItem("loggedInUserEmail");
@@ -185,7 +185,7 @@ function AdminDashboard() {
             }}
           >
             {t.logout}
-          </button>
+          </button> */}
         </header>
 
         {/* First 4 cards only */}
@@ -208,7 +208,9 @@ function AdminDashboard() {
           </div>
         </section>
 
-        {/* Engagement card including Assignments Submitted */}
+        {/* Engagement card removed or made full width */}
+        {/* To REMOVE, just comment or delete the section below */}
+        {/*
         <section className="engagement-section">
           <div className="card engagement-card">
             <h3>{t.engagement}</h3>
@@ -223,6 +225,7 @@ function AdminDashboard() {
             </p>
           </div>
         </section>
+        */}
 
         <section className="charts-section">
           <div className="chart-card doughnut-small">

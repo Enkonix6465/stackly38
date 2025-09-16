@@ -341,9 +341,51 @@ const Header = ({ toggleTheme, isDark }) => {
       </div>
 
       <div className="rightSection">
-        <button className="themeToggle" onClick={toggleTheme} aria-label="Toggle theme">
-          {isDark ? "●" : "○"}
-        </button>
+        {/* Only the sun/moon toggle switch */}
+        <label className="theme-switch" style={{ display: "inline-flex", alignItems: "center", cursor: "pointer", marginRight: "16px" }}>
+          <input
+            type="checkbox"
+            checked={isDark}
+            onChange={toggleTheme}
+            style={{ display: "none" }}
+          />
+          <span
+            style={{
+              width: "38px",
+              height: "20px",
+              background: isDark ? "#222" : "#ccc",
+              borderRadius: "20px",
+              position: "relative",
+              display: "inline-block",
+              transition: "background 0.3s",
+              verticalAlign: "middle",
+            }}
+          >
+            <span
+              style={{
+                position: "absolute",
+                left: isDark ? "20px" : "2px",
+                top: "2px",
+                width: "16px",
+                height: "16px",
+                background: isDark ? "#ff4a57" : "#fff",
+                borderRadius: "50%",
+                transition: "left 0.3s, background 0.3s",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.15)",
+                border: isDark ? "2px solid #ff4a57" : "2px solid #ccc",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "16px",
+              }}
+            >
+              {isDark
+                ? <span role="img" aria-label="moon">🌙</span>
+                : <span role="img" aria-label="sun">🌞</span>
+              }
+            </span>
+          </span>
+        </label>
 
         <div className="avatarContainer" ref={avatarRef} style={{ position: "relative" }}>
           <div

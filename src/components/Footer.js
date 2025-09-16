@@ -5,6 +5,7 @@ import facebook from "../images/facebook.svg";
 import linkedin from "../images/linkedin.svg";
 import twitter from "../images/twitter.svg";
 import gmail from "../images/email.svg";
+import logoImg from "../images/logo.png";
 import { useLanguage } from "../context/LanguageContext";
 
 const translations = {
@@ -21,12 +22,13 @@ const translations = {
     servicesPage: "Services",
     blog: "Blog",
     contact: "Contact",
-    cloud: "Cloud",
-    customerFirst: "Customer First",
-    cybersecurity: "Cybersecurity",
-    dataAI: "Data & AI",
-    enterpriseManagement: "Enterprise Mgmt",
-    intelligentIndustry: "Intelligent Industry",
+    // Updated service names
+    onlineLearning: "Online Learning Programs",
+    tutoring: "Personalized Tutoring",
+    curriculum: "Curriculum Development",
+    training: "Teacher Training",
+    consulting: "Educational Consulting",
+    studyAbroad: "Study Abroad Programs",
     scrollTop: "Scroll to top",
   },
   he: {
@@ -42,12 +44,13 @@ const translations = {
     servicesPage: "שירותים",
     blog: "בלוג",
     contact: "צור קשר",
-    cloud: "ענן",
-    customerFirst: "לקוח תחילה",
-    cybersecurity: "סייבר",
-    dataAI: "נתונים ובינה מלאכותית",
-    enterpriseManagement: "ניהול ארגוני",
-    intelligentIndustry: "תעשייה חכמה",
+    // Updated service names
+    onlineLearning: "תוכניות למידה מקוונת",
+    tutoring: "הדרכה מותאמת אישית",
+    curriculum: "פיתוח תוכניות לימודים",
+    training: "הכשרת מורים",
+    consulting: "ייעוץ חינוכי",
+    studyAbroad: "תוכניות לימודים בחו\"ל",
     scrollTop: "גלול למעלה",
   },
   ar: {
@@ -63,12 +66,13 @@ const translations = {
     servicesPage: "الخدمات",
     blog: "مدونة",
     contact: "اتصل بنا",
-    cloud: "سحابة",
-    customerFirst: "العميل أولاً",
-    cybersecurity: "الأمن السيبراني",
-    dataAI: "البيانات والذكاء الاصطناعي",
-    enterpriseManagement: "إدارة المؤسسات",
-    intelligentIndustry: "الصناعة الذكية",
+    // Updated service names
+    onlineLearning: "برامج التعلم عبر الإنترنت",
+    tutoring: "دروس خصوصية مخصصة",
+    curriculum: "تطوير المناهج",
+    training: "تدريب المعلمين",
+    consulting: "الاستشارات التعليمية",
+    studyAbroad: "برامج الدراسة بالخارج",
     scrollTop: "العودة للأعلى",
   },
 };
@@ -90,7 +94,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Logo and About */}
         <div className="footer-section">
-          <img src="/Images/logo.png" alt="Stackly Logo" className="footer-logo" />
+          <img src={logoImg} alt="Stackly Logo" className="footer-logo" />
           <p className="footer-description">
             {t.about}
           </p>
@@ -112,12 +116,12 @@ const Footer = () => {
         <div className="footer-section">
           <h4>{t.services}</h4>
           <ul>
-            <li><Link to="/cloud">{t.cloud}</Link></li>
-            <li><Link to="/customer-first">{t.customerFirst}</Link></li>
-            <li><Link to="/cybersecurity">{t.cybersecurity}</Link></li>
-            <li><Link to="/data-ai">{t.dataAI}</Link></li>
-            <li><Link to="/enterprise-management">{t.enterpriseManagement}</Link></li>
-            <li><Link to="/intelligent-industry">{t.intelligentIndustry}</Link></li>
+            <li><Link to="/onlinelearning">{t.onlineLearning}</Link></li>
+            <li><Link to="/PersonalizedTutoring">{t.tutoring}</Link></li>
+            <li><Link to="/curriculumdevelopment">{t.curriculum}</Link></li>
+            <li><Link to="/teachertraining">{t.training}</Link></li>
+            <li><Link to="/educationalconsulting">{t.consulting}</Link></li>
+            <li><Link to="/studyabroad">{t.studyAbroad}</Link></li>
           </ul>
         </div>
 

@@ -1,9 +1,10 @@
 .giving-section {
-  background: linear-gradient(to right, #ff7a8a, #ff4a57);
+  background: linear-gradient(120deg, #fff5fa 0%, #ffe0ec 100%);
   padding: 60px 20px;
   text-align: center;
   font-family: Arial, sans-serif;
   color: #210027;
+  box-shadow: 0 2px 24px rgba(220,53,69,0.06);
 }
 
 .giving-container {
@@ -20,7 +21,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 200px;
+  max-width: 220px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(33,0,39,0.08);
+  padding: 32px 18px 18px 18px;
+  margin: 0 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+}
+
+.giving-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(33,0,39,0.13);
+  background: #fbeff5;
 }
 
 .giving-item-icon {
@@ -46,20 +60,21 @@
   font-weight: bold;
   color: #210027;
   margin: 0;
+  text-align: justify;         /* Justify giving-section text */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .giving-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-}
-
-/* ========== DARK THEME FOR GIVING SECTION ========== */
 body.dark-theme .giving-section {
-  background: linear-gradient(to right, #232526, #1a1a1a);
+  background: linear-gradient(120deg, #232526 0%, #434343 100%);
   color: #f3f3f3;
+}
+
+body.dark-theme .giving-item {
+  background: #232526;
+  box-shadow: 0 4px 24px rgba(255,255,255,0.04);
+}
+
+body.dark-theme .giving-item:hover {
+  background: #434343;
 }
 
 body.dark-theme .giving-item-icon {
@@ -69,6 +84,7 @@ body.dark-theme .giving-item-icon {
 
 body.dark-theme .giving-item p {
   color: #f3f3f3;
+  text-align: justify;
 }
 
 
@@ -156,6 +172,20 @@ body.dark-theme .giving-item p {
 
 }
 
+/* Add these styles for contact form labels */
+.contact-right label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0d2d62;
+  margin-bottom: 4px;
+  margin-top: 10px;
+  display: block;
+}
+
+body.dark-theme .contact-right label {
+  color: #ffffff;
+}
+
 /* Success Message Styling */
 .success-box {
   flex-direction: column;
@@ -213,19 +243,17 @@ body.dark-theme .giving-item p {
   }
 }
 
-
-
-
-
-
-
-
-
 /*map section*/
 .map-section {
   width: 100%;
-  padding:10px;
+  padding: 10px;
   height: 500px; /* adjust height as needed */
+  overflow: hidden;           /* Hide scrollbars */
+  scrollbar-width: none;      /* Firefox */
+}
+
+.map-section::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Opera */
 }
 
 .map-section iframe {
@@ -268,6 +296,7 @@ body.dark-theme .giving-item p {
   font-size: 1.2rem;
   margin-bottom: 25px;
   line-height: 1.6;
+  text-align: justify;         /* Justify banner content */
 }
 
 .contact-btn {
@@ -408,4 +437,16 @@ body.dark-theme .contact-btn {
 body.dark-theme .contact-btn:hover {
   background: #ffffff;
   color: #64b5f6;
+}
+
+/* Hide scrollbars for the entire Contact Us page */
+body,
+html {
+  overflow-x: hidden;
+  scrollbar-width: none;         /* Firefox */
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
 }

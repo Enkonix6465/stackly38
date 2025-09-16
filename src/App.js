@@ -48,6 +48,14 @@ const AppLayout = () => {
     document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }, [darkMode]);
+
   return (
     <>
       {showHeaderAndFooter && <Header toggleTheme={toggleDarkMode} isDark={darkMode} />}
