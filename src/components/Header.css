@@ -160,26 +160,17 @@
 
 @media (max-width: 768px) {
   .header {
-    justify-content: space-between;
-    padding: 1rem 1.2rem;
-  }
-
-  .hamburger {
-    position: absolute;
-    top: 18px;
-    right: 18px;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1100;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    position: relative;
   }
 
   .logo {
     position: relative;
     z-index: 1101;
+    margin-right: 0.5rem;
   }
 
   .nav {
@@ -201,10 +192,62 @@
 
   .hamburger {
     display: flex;
+    position: static;
+    align-self: center;
+    order: 99;
+    margin-left: 0;
+    z-index: 1100;
+  }
+
+  .rightSection {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: static;
+    margin-left: auto;
+  }
+
+  .language-toggle {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.7rem;
+    min-width: 80px;
+    max-width: 110px;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .themeToggle {
+    font-size: 1.1rem;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Hide avatar in mobile view */
   .avatarContainer {
     display: none !important;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+    border-radius: 0;
+    background-color: var(--dropdown-bg);
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 0;
+    text-align: left;
+  }
+  .dropdown a {
+    padding-left: 2rem;
+    font-size: 1rem;
   }
 }
